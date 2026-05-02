@@ -1,0 +1,628 @@
+<!doctype html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Whales — Ocean Giants</title>
+    <style>
+      @import url("https://fonts.googleapis.com/css2?family=Playfair+Display:wght@600;700&family=Source+Sans+3:wght@300;400;600&display=swap");
+
+      * {
+        margin: 0;
+        padding: 0;
+        box-sizing: border-box;
+      }
+
+      body {
+        background-color: #0a1628;
+        color: #dce8f5;
+        font-family: "Source Sans 3", sans-serif;
+        font-weight: 300;
+        line-height: 1.8;
+      }
+
+      header {
+        background: linear-gradient(135deg, #0d2137, #0a3d62);
+        text-align: center;
+        padding: 60px 20px 40px;
+        border-bottom: 2px solid #1a5276;
+      }
+
+      header h1 {
+        font-family: "Playfair Display", serif;
+        font-size: 3em;
+        color: #a8d8ea;
+        letter-spacing: 2px;
+      }
+
+      header p {
+        font-size: 1.1em;
+        color: #7fb3d3;
+        margin-top: 10px;
+      }
+
+      .doc-meta {
+        display: flex;
+        justify-content: center;
+        gap: 28px;
+        margin-top: 20px;
+        font-size: 0.82em;
+        color: #4a7fa5;
+        letter-spacing: 0.5px;
+      }
+
+      .container {
+        max-width: 900px;
+        margin: 0 auto;
+        padding: 40px 24px;
+      }
+
+      h2 {
+        font-family: "Playfair Display", serif;
+        color: #a8d8ea;
+        font-size: 1.8em;
+        margin: 48px 0 14px;
+        border-left: 4px solid #1a6fa0;
+        padding-left: 14px;
+      }
+
+      h3 {
+        color: #7fb3d3;
+        font-size: 1.15em;
+        margin: 28px 0 8px;
+        font-family: "Playfair Display", serif;
+      }
+
+      h4 {
+        color: #a8d8ea;
+        font-size: 0.95em;
+        text-transform: uppercase;
+        letter-spacing: 1.2px;
+        margin: 22px 0 6px;
+        font-weight: 600;
+      }
+
+      p {
+        margin-bottom: 14px;
+        color: #c0d9ed;
+      }
+
+      hr {
+        border: none;
+        border-top: 1px solid #1a3a5c;
+        margin: 44px 0;
+      }
+
+      .whale-img {
+        width: 100%;
+        max-height: 340px;
+        object-fit: cover;
+        border-radius: 10px;
+        margin: 18px 0 8px;
+        border: 1px solid #1a3a5c;
+      }
+
+      .img-caption {
+        font-size: 0.8em;
+        color: #4a7fa5;
+        text-align: center;
+        margin-bottom: 18px;
+        font-style: italic;
+      }
+
+      ul,
+      ol {
+        padding-left: 24px;
+        margin-bottom: 16px;
+        color: #c0d9ed;
+      }
+
+      ul li,
+      ol li {
+        margin-bottom: 7px;
+      }
+
+      table {
+        width: 100%;
+        border-collapse: collapse;
+        margin: 20px 0;
+        font-size: 0.93em;
+      }
+
+      th {
+        background-color: #0d3a5c;
+        color: #a8d8ea;
+        padding: 12px 16px;
+        text-align: left;
+        font-weight: 600;
+        letter-spacing: 0.5px;
+      }
+
+      td {
+        padding: 10px 16px;
+        border-bottom: 1px solid #1a3a5c;
+        color: #c0d9ed;
+      }
+
+      tr:nth-child(even) td {
+        background-color: #0d1f35;
+      }
+      tr:hover td {
+        background-color: #112840;
+      }
+
+      .fact-box {
+        background-color: #0d2137;
+        border: 1px solid #1a5276;
+        border-radius: 8px;
+        padding: 20px 24px;
+        margin: 20px 0;
+      }
+
+      .fact-box strong {
+        display: block;
+        margin-bottom: 10px;
+        color: #a8d8ea;
+        font-size: 0.85em;
+        text-transform: uppercase;
+        letter-spacing: 1px;
+      }
+
+      .tag {
+        display: inline-block;
+        background: #0d3a5c;
+        color: #a8d8ea;
+        padding: 3px 10px;
+        border-radius: 20px;
+        font-size: 0.8em;
+        margin: 3px 4px 3px 0;
+      }
+
+      .did-you-know {
+        background: linear-gradient(135deg, #0a2540, #0d3a5c);
+        border-left: 4px solid #a8d8ea;
+        border-radius: 0 8px 8px 0;
+        padding: 18px 22px;
+        margin: 24px 0;
+        font-size: 0.95em;
+        color: #dce8f5;
+      }
+
+      .did-you-know::before {
+        content: "💡 Did You Know?";
+        display: block;
+        font-size: 0.78em;
+        font-weight: 600;
+        color: #a8d8ea;
+        text-transform: uppercase;
+        letter-spacing: 1px;
+        margin-bottom: 8px;
+      }
+
+      .two-col {
+        display: grid;
+        grid-template-columns: 1fr 1fr;
+        gap: 16px;
+        margin: 16px 0;
+      }
+
+      .two-col .fact-box {
+        margin: 0;
+      }
+
+      footer {
+        text-align: center;
+        padding: 30px;
+        background-color: #0d1f35;
+        border-top: 1px solid #1a3a5c;
+        color: #4a7fa5;
+        font-size: 0.9em;
+        margin-top: 60px;
+      }
+
+      footer a {
+        color: #7fb3d3;
+        text-decoration: none;
+      }
+
+      a {
+        color: #a8d8ea;
+      }
+      a:hover {
+        color: #ffffff;
+      }
+
+      em {
+        color: #7fb3d3;
+        font-style: italic;
+      }
+      strong {
+        color: #dce8f5;
+      }
+    </style>
+  </head>
+  <body>
+    <header>
+      <h1>🐋 Whales — Ocean Giants</h1>
+      <p>A documentation of the largest and most remarkable animals on Earth</p>
+    </header>
+
+    <div class="container">
+      <h2 id="about">What Are Whales?</h2>
+
+      <p>
+        Whales are the largest animals to have ever existed on Earth. They are
+        fully aquatic mammals belonging to the order <em>Cetacea</em>, and
+        despite living entirely in water, they breathe air, give birth to live
+        young, and nurse them with milk — just like land mammals do.
+      </p>
+
+      <p>
+        What most people don't realise is that whales evolved
+        <strong>from land animals</strong>. Around 50 million years ago, their
+        ancestors were four-legged mammals that gradually moved into the sea.
+        The closest living relative of whales today is the
+        <strong>hippopotamus</strong>.
+      </p>
+
+      <img
+        class="whale-img"
+        src="whale-img.jpg"
+        alt="Humpback whale swimming underwater"
+      />
+      <p class="img-caption">A humpback whale gliding through open ocean</p>
+
+      <h4>Two Main Groups</h4>
+      <ul>
+        <li>
+          <strong>Baleen Whales (Mysticeti)</strong> — have no teeth; instead
+          they filter food through comb-like baleen plates made of keratin (same
+          material as your fingernails). Includes Blue Whale, Humpback, Fin
+          Whale.
+        </li>
+        <li>
+          <strong>Toothed Whales (Odontoceti)</strong> — active predators with
+          teeth; also have a specialised organ called a <em>melon</em> in their
+          forehead used for echolocation. Includes Sperm Whale, Orca, Beluga.
+        </li>
+      </ul>
+
+      <div class="did-you-know">
+        Whales don't drink seawater. They get all the fresh water they need from
+        the fish and squid they eat — the metabolic breakdown of prey releases
+        water directly into their bloodstream.
+      </div>
+
+      <hr />
+
+      <h2 id="species">Notable Species</h2>
+
+      <h3>
+        🔵 Blue Whale
+        <em style="font-size: 0.8em; color: #4a7fa5"
+          >(Balaenoptera musculus)</em
+        >
+      </h3>
+
+      <p>
+        The Blue Whale is the largest animal ever known to have existed — not
+        just today, but in the entire 4.5 billion year history of life on Earth.
+        It outweighs even the largest dinosaurs.
+        <br />
+        It can reach lengths of up to <strong>30 metres</strong> and weigh as
+        much as <strong>200 tonnes</strong>.
+        <br />
+        Its heart alone weighs about <strong>180 kg</strong> — roughly the size
+        of a small car — and beats only 4–8 times per minute when diving.
+      </p>
+
+      <img class="whale-img" src="blue-whale.jpg" alt="Blue whale" />
+      <p class="img-caption">
+        A Blue Whale near the surface — note the mottled blue-grey skin
+      </p>
+
+      <div class="fact-box">
+        <strong>Quick Reference</strong>
+        <span class="tag">Lifespan</span> 80–90 years &nbsp;
+        <span class="tag">Diet</span> Krill only &nbsp;
+        <span class="tag">Status</span> Endangered &nbsp;
+        <span class="tag">Call</span> 188 decibels — loudest animal on Earth
+      </div>
+
+      <div class="did-you-know">
+        A Blue Whale eats up to <strong>4 tonnes of krill per day</strong> — but
+        only during summer. During winter migration, they barely eat at all and
+        survive entirely on stored fat reserves. A single feeding season has to
+        fuel almost an entire year.
+      </div>
+
+      <h3>
+        🎵 Humpback Whale
+        <em style="font-size: 0.8em; color: #4a7fa5"
+          >(Megaptera novaeangliae)</em
+        >
+      </h3>
+
+      <p>
+        Humpback Whales are famous for their songs — but these aren't random
+        sounds. Only males sing, and all males in the same ocean basin sing the
+        <strong>exact same song</strong>
+        at any given time. The song slowly evolves over months, and every whale
+        updates it in sync. Scientists still don't fully understand how this
+        collective update happens.
+        <br /><br />
+        They are also one of very few non-human animals observed
+        <strong>deliberately protecting other species</strong> from orca attacks
+        — including seals, dolphins, and even humans in the water.
+      </p>
+
+      <h4>Migration Facts</h4>
+      <ol>
+        <li>
+          Complete one of the longest migrations of any mammal — up to
+          <strong>16,000 km</strong> each way
+        </li>
+        <li>
+          Travel from polar feeding grounds to tropical breeding grounds every
+          year
+        </li>
+        <li>
+          Navigate with remarkable precision across open ocean, likely using
+          Earth's magnetic field
+        </li>
+        <li>
+          Calves are born in warm tropical waters and must immediately swim
+          thousands of km to cold feeding grounds
+        </li>
+      </ol>
+
+      <div class="did-you-know">
+        Humpbacks hunt using a technique called
+        <strong>bubble-net feeding</strong> — a group of whales swims in a
+        spiral below a school of fish, blowing bubbles to create a cylindrical
+        "net." The fish bunch together trying to avoid the bubbles, and the
+        whales lunge upward through the centre with their mouths open. It's one
+        of the most coordinated hunting strategies in the animal kingdom.
+      </div>
+
+      <h3>
+        🦷 Sperm Whale
+        <em style="font-size: 0.8em; color: #4a7fa5"
+          >(Physeter macrocephalus)</em
+        >
+      </h3>
+
+      <p>
+        The Sperm Whale is the largest toothed predator on Earth. It holds the
+        record for the
+        <strong>deepest confirmed dive of any mammal</strong> — over
+        <strong>2,250 metres</strong> — and can hold its breath for up to 90
+        minutes. At those depths, pressure is over 200 times that at the
+        surface. Their ribcages actually collapse inward to survive it.
+      </p>
+
+      <img class="whale-img" src="sperm-whale.jpg" alt="Sperm whale" />
+      <p class="img-caption">
+        The Sperm Whale's enormous square head makes up nearly a third of its
+        body
+      </p>
+
+      <div class="two-col">
+        <div class="fact-box">
+          <strong>Biology</strong>
+          The massive square head contains an organ called the
+          <em>spermaceti organ</em> — filled with a waxy fluid that helps with
+          buoyancy control and possibly amplifies sonar clicks.
+        </div>
+        <div class="fact-box">
+          <strong>Ambergris</strong>
+          Sperm whales produce a rare substance called <em>ambergris</em> in
+          their intestines — formed around indigestible squid beaks. It was
+          historically worth more than gold and is still used in perfumery
+          today.
+        </div>
+      </div>
+
+      <div class="did-you-know">
+        Sperm Whales have the
+        <strong>largest brain of any animal ever</strong> — weighing around 7–9
+        kg, nearly 6× the size of a human brain. They live in complex
+        matriarchal societies, have regional dialects in their clicks, and
+        appear to have distinct cultural identities between different ocean
+        populations.
+      </div>
+
+      <hr />
+
+      <h2 id="comparison">Species Comparison</h2>
+
+      <p>
+        The table below compares the five most well-documented whale species
+        across key biological metrics.
+      </p>
+
+      <table>
+        <tr>
+          <th>Species</th>
+          <th>Type</th>
+          <th>Max Length</th>
+          <th>Max Weight</th>
+          <th>Diet</th>
+          <th>Dive Depth</th>
+          <th>Status</th>
+        </tr>
+        <tr>
+          <td>Blue Whale</td>
+          <td>Baleen</td>
+          <td>30 m</td>
+          <td>200 tonnes</td>
+          <td>Krill</td>
+          <td>~500 m</td>
+          <td>Endangered</td>
+        </tr>
+        <tr>
+          <td>Humpback Whale</td>
+          <td>Baleen</td>
+          <td>16 m</td>
+          <td>30 tonnes</td>
+          <td>Fish, Krill</td>
+          <td>~300 m</td>
+          <td>Least Concern</td>
+        </tr>
+        <tr>
+          <td>Sperm Whale</td>
+          <td>Toothed</td>
+          <td>20 m</td>
+          <td>57 tonnes</td>
+          <td>Giant Squid</td>
+          <td>2,250 m</td>
+          <td>Vulnerable</td>
+        </tr>
+        <tr>
+          <td>Orca</td>
+          <td>Toothed</td>
+          <td>9 m</td>
+          <td>6 tonnes</td>
+          <td>Fish, Mammals</td>
+          <td>~260 m</td>
+          <td>Data Deficient</td>
+        </tr>
+        <tr>
+          <td>Fin Whale</td>
+          <td>Baleen</td>
+          <td>27 m</td>
+          <td>74 tonnes</td>
+          <td>Fish, Krill</td>
+          <td>~470 m</td>
+          <td>Vulnerable</td>
+        </tr>
+      </table>
+
+      <hr />
+
+      <h2 id="intelligence">Intelligence & Social Life</h2>
+
+      <p>
+        Whales are among the most cognitively complex animals on Earth. Several
+        species possess
+        <em>spindle neurons</em> — a type of brain cell previously thought to be
+        unique to humans and great apes — which are associated with
+        self-awareness, empathy, and social cognition.
+      </p>
+
+      <h4>Documented Behaviours</h4>
+      <ul>
+        <li>
+          <strong>Culture:</strong> Different whale populations have distinct
+          feeding techniques, songs, and communication styles passed down
+          through generations — a hallmark of culture.
+        </li>
+        <li>
+          <strong>Grief:</strong> Multiple species have been observed carrying
+          deceased calves for days, sometimes weeks.
+        </li>
+        <li>
+          <strong>Play:</strong> Whales engage in non-survival play behaviour —
+          breaching, tail-slapping, and object manipulation — particularly in
+          younger individuals.
+        </li>
+        <li>
+          <strong>Cooperation:</strong> Orcas and humpbacks coordinate complex
+          multi-individual hunts that require planning and role assignment.
+        </li>
+        <li>
+          <strong>Self-recognition:</strong> Bottlenose dolphins (toothed
+          whales) pass the mirror self-recognition test — one of the strongest
+          indicators of self-awareness.
+        </li>
+      </ul>
+
+      <div class="did-you-know">
+        Orcas (killer whales) are technically dolphins — the largest members of
+        the dolphin family
+        <em>Delphinidae</em>. Different orca populations are so genetically and
+        culturally distinct that scientists consider them to be separate species
+        in all but official classification. "Resident" orcas eat only fish;
+        "Transient" orcas hunt marine mammals — and the two groups never
+        interbreed, even in the same waters.
+      </div>
+
+      <hr />
+
+      <h2 id="conservation">Conservation</h2>
+
+      <p>
+        Between the 1900s and 1970s, commercial whaling killed an estimated
+        <strong>3 million whales</strong> — pushing multiple species to the edge
+        of extinction. The Blue Whale population dropped from roughly 350,000
+        individuals to fewer than <strong>10,000</strong> by the time the
+        International Whaling Commission banned commercial whaling in 1986.
+      </p>
+
+      <p>
+        Today, recovery is happening — but slowly. Blue Whale populations are
+        estimated at 10,000–25,000 globally. The threats have shifted:
+      </p>
+
+      <ul>
+        <li>
+          <strong>Ship strikes</strong> — container ships travel faster than
+          whales can react; strikes are a leading cause of death for large
+          whales in shipping lanes
+        </li>
+        <li>
+          <strong>Ocean noise pollution</strong> — sonar, shipping traffic, and
+          drilling interfere with whale communication and navigation over
+          thousands of kilometres
+        </li>
+        <li>
+          <strong>Entanglement</strong> — fishing gear is a major cause of
+          injury and slow death, especially for right whales
+        </li>
+        <li>
+          <strong>Climate change</strong> — warming oceans shift krill
+          distribution, disrupting feeding grounds that whales have relied on
+          for millennia
+        </li>
+        <li>
+          <strong>Plastic ingestion</strong> — multiple stranded whales have
+          been found with hundreds of kilos of plastic in their stomachs
+        </li>
+      </ul>
+
+      <div class="did-you-know">
+        Whales are actually a
+        <strong>critical tool against climate change</strong>. When a whale dies
+        naturally, its body sinks to the ocean floor — sequestering decades
+        worth of absorbed carbon permanently. A single great whale sequesters an
+        estimated <strong>33 tonnes of CO₂</strong> over its lifetime.
+        Researchers at the IMF have calculated that restoring whale populations
+        to pre-whaling levels could capture carbon equivalent to planting
+        <strong>1.7 trillion trees</strong>.
+      </div>
+
+      <p>
+        Learn more and support conservation efforts:
+        <br /><br />
+        🔗
+        <a
+          href="https://en.wikipedia.org/wiki/Whale_conservation"
+          target="_blank"
+          >Whale Conservation — Wikipedia</a
+        >
+      </p>
+    </div>
+
+    <footer>
+      <p>
+        Built with pure HTML &amp; CSS &nbsp;|&nbsp; Day 1 of Web Development
+        Internship 🚀
+      </p>
+      <p style="margin-top: 8px">
+        <a href="https://en.wikipedia.org/wiki/Whale" target="_blank"
+          >Wikipedia — Whale</a
+        >
+      </p>
+    </footer>
+  </body>
+</html>
